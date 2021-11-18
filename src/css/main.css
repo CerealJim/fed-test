@@ -3,11 +3,13 @@
 }
 
 #q4Wrapper {
-  background-color: #2A3035;
+  background-color: #2a3035;
   font-family: "Roboto", sans-serif;
   color: white;
 }
-#q4Wrapper h1, #q4Wrapper h3 {
+#q4Wrapper h1,
+#q4Wrapper h2,
+#q4Wrapper h3 {
   margin: 0;
 }
 #q4Wrapper h1 {
@@ -18,8 +20,9 @@
   line-height: 20px;
   text-transform: uppercase;
 }
-#q4Wrapper header, #q4Wrapper footer {
-  background-color: #22272B;
+#q4Wrapper header,
+#q4Wrapper footer {
+  background-color: #22272b;
 }
 #q4Wrapper header {
   padding: 20px;
@@ -59,6 +62,80 @@
 }
 
 /* Begin styling the report items here! */
-.reports {
+/* updated html to be more semantic - styling ul*/
+ul {
+  padding: 0;
+  list-style: none;
+}
 
+/* creating 3 column layout */
+.reports {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* set width of the list items in container  */
+.reports_item {
+  width: calc(33.33% - (30px * 2 / 3));
+  margin-right: 30px;
+  padding-bottom: 30px;
+}
+
+/* remove margin to every third list item in 3 column grid */
+.reports_item:nth-child(3n + 3) {
+  margin-right: 0;
+}
+
+/* Shrink img container and center */
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.5rem;
+}
+
+.imgContainer {
+  width: 80%;
+}
+
+img,
+a {
+  width: 100%;
+  height: 100%;
+}
+
+/* apply article styling */
+.reports_docs:last-child {
+  background-color: #22272b;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+/* remove column - responsive design layout for list of reports */
+@media (max-width: 768px) {
+  .reports_item {
+    width: calc(50% - (30px * 1 / 2));
+  }
+  /* remove margin from every third item to every second for 2 column layout */
+  .reports_item:nth-child(3n + 3) {
+    margin-right: 30px;
+  }
+  .reports_item:nth-child(2n + 2) {
+    margin-right: 0;
+  }
+}
+
+/* remove column - responsive design layout for list of reports */
+@media (max-width: 480px) {
+  .reports_item {
+    width: 100%;
+  }
+
+  /* remove all margins */
+  .reports_item:nth-child(3n + 3) {
+    margin-right: 0;
+  }
+  .reports_item {
+    margin-right: 0;
+  }
 }
